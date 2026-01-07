@@ -9,23 +9,13 @@ int main()
         int n;
         cin>>n;
         vector<int> vec(n);
-        int zero=0;
-        int one=0;
+        long long int zero=0;
+        long long int one=0;
         for(int i=0;i<n;i++)
         {
             cin>>vec[i];
         }
-        for(int i=0;i<n;i++)
-        {
-            if(vec[i] == 0)
-            {
-                zero++;
-            }
-            else{
-                one++;
-            }
-        }
-        if(one>= zero)
+        if(vec[0] == 1 || vec[n-1] == 1)
         {
             cout<<"Alice"<<endl;
         }
