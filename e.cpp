@@ -35,10 +35,10 @@ int main()
             cout << 0 << endl;
             break;
         }
-        float sum = 0;
+        long long int sum = 0;
         for (int i = 0; i < n - 1; i++)
         {
-            sum += 1.0 / lcm(vec[i], vec[i + 1]);
+            sum +=lcm(vec[i], vec[i + 1]);
         }
         sum += 1.0 / lcm(vec[n - 1], vec[0]);
         cout << sum << endl;

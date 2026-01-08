@@ -1,7 +1,7 @@
-Alice
-Alice
-Bob
-Bob
-Alice
-Alice
-Bob
+NO
+YES
+NO
+NO
+YES
+YES
+YES

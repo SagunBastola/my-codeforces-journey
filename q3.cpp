@@ -14,7 +14,7 @@ int main()
         {
             if (2 * k == n)
             {
-                n = k + k - 1;
+                n = k + k ;
             }
             else
             {
@@ -25,15 +25,17 @@ int main()
         int sold = 1;
         if (k <= m)
         {
+            m=m-k-1;
             sold += k - 1;
         }
         else
         {
+            m=0 ;
             sold += m;
         }
-        if ((n - k) <= m)
+        if ((n - k ) <= m)
         {
-            sold = sold + (n - k);
+            sold = sold + (n - k );
         }
         else
         {
