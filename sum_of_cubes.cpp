@@ -11,7 +11,7 @@ int main()
         cin >> x;
         int a = 0;
         long long int m;
-        for (int i = 1; i * i * i < x; i++)
+        for (long long int i = 1; i * i * i < x; i++)
         {
             m = round(cbrt(x - i * i * i));
             if (m>=1 && m * m * m == x - i * i * i)
