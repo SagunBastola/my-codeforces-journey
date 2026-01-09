@@ -8,6 +8,6 @@ int main()
     {
         long long int n;
         cin>>n;
-        cout<<n-1<<" "<<1<<" "<<1<<" "<<1<<endl;
+        cout<<n-3<<" "<<1<<" "<<1<<" "<<1<<endl;
     }
 }
