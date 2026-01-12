@@ -20,7 +20,7 @@ int main()
             long long sand_left = min(s, k);
             long long time = m % k;
             long long i = 0;
-            cout << max(i, sand_left - time) << endl;
+            cout << max(i, (sand_left - time)) << endl;
         }
     }
 }
