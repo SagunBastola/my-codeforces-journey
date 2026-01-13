@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+using ll=long long;
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -8,19 +9,21 @@ int main()
     cin >> t;
     while (t--)
     {
-        long long s;
-        long long k, m;
+        ll s;
+        ll k, m;
         cin >> s >> k >> m;
-        if (m < k)
+        if(k<s)
         {
-            cout << max((1ll) * 0, s - m) << endl;
+            if(m%(2*k) < k)
+            {
+                cout<<s-m%k<<endl;
+            }
+            else{
+                cout<<k-m%k<<endl;
+            }
         }
-        else
-        {
-            long long sand_left = min(s, k);
-            long long time = m % k;
-            long long i = 0;
-            cout << max(i, (sand_left - time)) << endl;
+        else{
+            cout<<max(0ll,s-m%k)<<endl;
         }
     }
 }
