@@ -9,6 +9,6 @@ int main()
     {
         ll n,s;
         cin>>n>>s;
-        cout<<(int)s/(n*n)<<endl;
+        cout<<(ll)s/(n*n)<<endl;
     }
 }
