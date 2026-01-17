@@ -1,3 +1,7 @@
-YES
-NO
-YES
+Bob
+Alice
+2
+1 2 
+Alice
+2
+1 2 
