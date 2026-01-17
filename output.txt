@@ -1,6 +1,5 @@
-Ajisai
-Mai
-Tie
-Ajisai
-Tie
-Mai
+1
+9
+29
+56
+145
