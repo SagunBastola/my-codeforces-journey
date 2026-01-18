@@ -11,41 +11,23 @@ int main()
         cin>>n;
         string s;
         cin>>s;
-        string t;   
-        int a=n;
-        for(int i=0;i<a;i++)
+        int cnt=0;
+        for(int i=0;i<n;i++)
         {
-            if(i<a/2)
+            if(s[i] != '(')
             {
-                t+='(';
+                break;
             }
-            else{
-                t+=')';
-            }
+            cnt++;
         }
-        if(t.empty())
+
+        if(cnt < n/2-1)
         {
-            cout<<-1<<endl;;
-            continue;
-        }
-        if(s== t)
-        {
-            cout<<-1<<endl;;
-            continue;
-        }
-        ll i=0;
-        while(s[i] == t[i] && i<a)
-        {
-            i++;
-        }
-        cout<<s[i]<<t[i];
-        i++;
-        if(i<a )
-        {
-            cout<<i*2<<endl;
+            cout<<n-2;
         }
         else{
-            cout<<-1<<endl;
+            cout<<-1;
         }
+        cout<<endl;
     }
 }
