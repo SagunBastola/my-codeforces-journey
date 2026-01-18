@@ -1,5 +1,4 @@
-edb
-ccbbba
-bbbbbaaaaaaa
-z
-aaaaa
+6 2
+0 4
+0 3
+7 0
