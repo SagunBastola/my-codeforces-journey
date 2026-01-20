@@ -28,14 +28,14 @@ int main()
                 break;
             }
         }
-        for(int j=n-1;j>=0;j++)
+        for(int j=n-1;j>=0;j--)
         {
             if(vec[j]%2 != vec[n-1]%2)
             {
-                right=n-1-j;
+                right=n-j-1;
                 break;
             }
         }
-        cout<<max(left,right)<<endl;
+        cout<<min(left,right)<<endl;
     }
 }
