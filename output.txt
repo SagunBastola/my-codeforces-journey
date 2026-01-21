@@ -1,3 +1,1 @@
-abcdcbeef
-aaaaababadabbcc
-Impossible
+9 3 0
