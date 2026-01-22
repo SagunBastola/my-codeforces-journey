@@ -1,12 +1,6 @@
-3 1 1 4 1
-10
-XL
-L
-L
-XXL
-XXL
-XL
-L
-XXL
-S
-M
+find
+4
+fondfind
+fondfirstof
+fondit
+fand
