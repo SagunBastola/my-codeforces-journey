@@ -1,6 +1,2 @@
-find
-4
-fondfind
-fondfirstof
-fondit
-fand
+8
+1 2 1 1 1 3 3 4
