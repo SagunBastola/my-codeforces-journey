@@ -1,28 +1,19 @@
 #include<bits/stdc++.h>
 using namespace std;
+using ll=long long;
 int main()
 {
-    int n;
+    ll n;
     cin>>n;
-    vector<int> vec(n);
-    for(int& x : vec)
+    vector<ll> vec(n);
+    for(ll& x : vec)
     {
         cin>>x;
     }
-    int cnt=0;
-    int i=0;
-    while(i<n)
+    ll cnt=0;
+    for(ll i=0;i<n;i++)
     {
-        int a=vec[i];
-        if(a>0)
-        {
-            vec[i]-=1;
-            i=0;
-            cnt++;
-        }
-        else{
-            i++;
-        }
+        cnt+=(i+1)*(vec[i]-1)+1;
     }
     cout<<cnt;
 }
