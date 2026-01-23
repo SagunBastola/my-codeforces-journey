@@ -19,7 +19,7 @@ int main()
     cin >> n;
     while (n > 0)
     {
-        cout << n << " " << endl;
+        cout << n << " ";
         if (isPrime(n))
         {
             cout << 1 << endl;
