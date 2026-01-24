@@ -1,10 +1,7 @@
-No
-No
-No
-No
-No
-No
-No
-Yes
-Yes
-No
+YES
+NO
+YES
+NO
+YES
+YES
+YES
