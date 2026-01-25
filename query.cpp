@@ -43,14 +43,26 @@ int main()
                 }
             }
         }
+        vector<int> prefix(n);
+        prefix[0] = a[0];
+        for (int i = 1; i < n; i++)
+        {
+            prefix[i] = prefix[i - 1] + a[i];
+        }
+
         for (int i = 0; i < q; i++)
         {
-            int l = query[i][0];
-            int r = query[i][1];
+            int l = query[i][0]; 
+            int r = query[i][1]; 
+
             int sum = 0;
-            for (int i = l - 1; i < r; i++)
+            if (l == 1)
             {
-                sum += a[i];
+                sum = prefix[r - 1];
+            }
+            else
+            {
+                sum = prefix[r - 1] - prefix[l - 2];
             }
             cout << sum << " ";
         }
