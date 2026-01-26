@@ -22,7 +22,7 @@ int main()
             cin>>y;
             min1=min(min1,y);
         }
-        int score=0;
+        long long score=0;
         int idx=0;
         if(min1 < min2)
         {
@@ -37,18 +37,10 @@ int main()
                 continue;
             }
             else{
+                score+=min1;
                 level++;
             }
         }
-        sort(b.begin(),b.end());
-        for(int i=0;i<n;i++)
-        {
-            if(b[i] <= min1 && i<n-1)
-            {
-                min1=a[i+1]-1;
-            }
-        }
-        long long score1=(1ll)*(min1)*(1ll)*level;
-        cout<<score1<<endl;
+        cout<<score<<endl;
     }
 }

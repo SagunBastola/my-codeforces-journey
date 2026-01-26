@@ -28,7 +28,7 @@ int main()
                 break;
             }
         }
-        reverse(vec.begin() + l, vec.begin() + r +1 );
+        reverse(vec.begin() + l, vec.begin() + r + 1);
         for (int i = 0; i < n; i++)
         {
             cout << vec[i] << " ";
