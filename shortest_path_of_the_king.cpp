@@ -1,42 +1,75 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
+ll solve(ll x, ll y)
+{
+    ll p = x;
+    ll q1 = y;
+    bool one = false;
+    ll q2 = y;
+    bool two = false;
+    int i = 0;
+    while (y > 0)
+    {
+        y = y >> 1;
+        i++;
+    }
+    while (q1 >= y - 10e5 && q1 >= 0)
+    {
+        if (!(p & q1))
+        {
+            one = true;
+            break;
+        }
+        q1--;
+    }
+    while (q2 <= y + 10e5)
+    {
+        if (!(p & q2))
+        {
+
+            two = true;
+            break;
+        }
+        q2++;
+    }
+    int q = y;
+    if (one && two)
+    {
+        q = abs(y - q1) < abs(y - q2) ? q1 : q2;
+    }
+    else if (one)
+    {
+        q = q1;
+    }
+    else
+    {
+        q = q2;
+    }
+    while (i != 0)
+    {
+        q <<= 1;
+        i--;
+    }
+    return q;
+}
 int main()
 {
-    string start,end;
-    cin>>start>>end;
-    int x=start[0]-'a';
-    int y=start[1]-'a';
-    int x1=end[0]-'a';
-    int y1=end[1]-'a';
-    vector<string> result;
-    while(x != x1 || y!=y1)
+    int t;
+    cin >> t;
+    while (t--)
     {
-        string r="";
-        if(x < x1)
+        ll x, y;
+        cin >> x >> y;
+        ll q1 = solve(x, y);
+        int p1 = solve(y, x);
+        if (abs(x - p1) > abs(y - q1))
         {
-            r+='R';
-            x++;
+            cout << x << " " << q1 << endl;
         }
-        else if(x > x1)
+        else
         {
-            r+='L';
-            x--;
+            cout << p1 << " " << y << endl;
         }
-        if(y< y1)
-        {
-            r+='U';
-            y++;
-        }
-        else if(y>y1)
-        {
-            r+='D';
-            y--;
-        }
-        result.push_back(r);
-    }
-    cout<<result.size()<<endl;
-    for(int i=0;i<result.size();i++)
-    {
-        cout<<result[i]<<endl;
     }
 }
