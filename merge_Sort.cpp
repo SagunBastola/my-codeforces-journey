@@ -39,10 +39,17 @@ void merge(vector<int> &a, int start, int end)
         merge1(a, start, mid, end);
     }
 }
+#define PB push_back
 int main()
 {
-    vi a = {1, 6, 4, 2, 4, 6, 3};
-    merge(a, 0, 6);
+    int n;
+    cin>>n;
+    vi a(n);
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    merge(a, 0, a.size()-1);
     for (int i = 0; i < a.size(); i++)
     {
         cout << a[i] << " ";
