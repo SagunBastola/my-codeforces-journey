@@ -8,5 +8,6 @@ int main()
     ans=max(ans,a*b*c);
     ans=max(ans,(a+b)*c);
     ans=max(ans,a*(b+c));
+    ans=max(ans,a+b+c);
     cout<<ans;
 }
