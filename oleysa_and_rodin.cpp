@@ -13,14 +13,18 @@ int main()
     {
         cout << 1;
         for (int i = 0; i < n - 1; i++)
+        {
             cout << 0;
+        }
         cout << endl;
     }
 
     else
     {
         for (int i = 0; i < n; i++)
+        {
             cout << t;
+        }
         cout << endl;
     }
     return 0;
