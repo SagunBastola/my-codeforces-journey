@@ -33,7 +33,8 @@ int main()
                 a+=s[i];
             }
             vec.push_back(a);
+            cnt++;
         }
-        cout<<vec[0]<<endl;
+        
     }
 }
