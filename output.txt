@@ -1,6 +1,8 @@
+YES
+xbxaa
+YES
+abcde
+YES
+ayyax
 NO
-YES
-YES
 NO
-YES
-YES
