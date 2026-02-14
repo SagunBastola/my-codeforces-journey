@@ -2,7 +2,7 @@
 using ll = long long;
 using namespace std;
 #define rep(i, m, n) for (ll i = m; i < n; i++)
-#define repr(i, m, n) for (ll i = m; i >= 0; i--)
+#define repr(i, m, n) for (ll i = m; i >= n; i--)
 template<typename T>
 istream& operator>>(istream &s, vector<T> &v)
 {
@@ -10,8 +10,8 @@ istream& operator>>(istream &s, vector<T> &v)
         s >> x;
     return s;
 }
-#define vi vector<int>
-#define pi pair<int>
+#define vi vector<ll>
+#define pi pair<ll,ll>
 void solve()
 {
 }
