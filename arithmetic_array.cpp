@@ -14,6 +14,22 @@ istream& operator>>(istream &s, vector<T> &v)
 #define pi pair<int>
 void solve()
 {
+    ll n;
+    cin>>n;
+    vi a(n);
+    cin>>a;
+    ll sum=0;
+    rep(i,0,n)
+    {
+        sum+=a[i];
+    }
+    if(sum < n)
+    {
+        cout<<1<<endl;
+        return ;
+    }
+    ll cnt=abs(sum)-n;
+    cout<<cnt<<endl;
 }
 int main()
 {
