@@ -14,16 +14,30 @@ istream& operator>>(istream &s, vector<T> &v)
 #define pi pair<ll,ll>
 void solve()
 {
-    ll n;
+    int ta=false;
+    int tv=false;
+    int n;
     cin>>n;
-    vi a(n);
-    cin>>a;
-    ll ans=INT_MIN;
+    vi vec(n);
+    cin>>vec;
     rep(i,0,n)
     {
-        ans=max(ans,a[i]);
+        if(vec[i] == 1)
+        {
+            ta=true;
+        }
+        if(vec[i] == 67)
+        {
+            tv=true;
+        }
     }
-    cout<<ans<<endl;
+    if( tv)
+    {
+        cout<<"YES"<<endl;
+    }
+    else{
+        cout<<"NO"<<endl;
+    }
 }
 int main()
 {

@@ -18,12 +18,12 @@ void solve()
     cin>>n;
     vi a(n);
     cin>>a;
-    ll ans=INT_MIN;
+    reverse(a.begin(),a.end());
     rep(i,0,n)
     {
-        ans=max(ans,a[i]);
+        cout<<a[i]<<" ";
     }
-    cout<<ans<<endl;
+    cout<<endl;
 }
 int main()
 {
