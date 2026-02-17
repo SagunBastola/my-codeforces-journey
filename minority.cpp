@@ -14,30 +14,26 @@ istream& operator>>(istream &s, vector<T> &v)
 #define pi pair<ll,ll>
 void solve()
 {
-    ll n,m;
-    cin>>n>>m;
-    vi a(n);
-    cin>>a;
-    sort(a.begin(),a.end());
-    ll sum=0;
-    if(m>n)
+    string s;
+    cin>>s;
+    ll zero=0;
+    ll one=0;
+    rep(i,0,s.size())
     {
-        m=n;
-    }
-    rep(i,0,m)
-    {
-        if(a[i] > 0)
+        if(s[i] == '0')
         {
-            break;
+            zero++;
         }
-        sum+=a[i];
+        else{
+            one++;
+        }
     }
-    if(sum <= 0)
+    if(zero == one)
     {
-        cout<<abs(sum)<<endl;
+        cout<<max(0ll,zero-1)<<endl;
     }
     else{
-        cout<<-sum<<endl;
+        cout<<min(zero,one)<<endl;
     }
 }
 int main()
@@ -45,7 +41,7 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int t;
-    t=1;
+    cin >> t;
     while (t--)
     {
         solve();
