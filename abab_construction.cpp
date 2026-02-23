@@ -12,28 +12,46 @@ istream &operator>>(istream &s, vector<T> &v)
 }
 #define vi vector<ll>
 #define pi pair<ll, ll>
-bool solve1(string s,string t,int start,int end,int i)
+bool solve1(string s, string t, int start, int end, int i, vector<int8_t> &a)
 {
-    if(i>=s.size())
+    int n=s.size();
+    if (i >= s.size())
     {
         return true;
     }
-    if(s[i] == '?')
+    if (a[i*(n+1)+start] != -1)
     {
-        bool a=solve1(s,t,start+1,end,i+1);
-        bool b=solve1(s,t,start,end-1,i+1);
-        return a || b;
+        if (a[i*(n+1)+start] == 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
-    else if(s[i] == t[start])
+    bool possible = false;
+    bool ab = false, ba = false;
+    if (!possible && (s[i] == t[start] || s[i] == '?'))
     {
-        return solve1(s,t,start+1,end,i+1);
+        ab = solve1(s, t, start + 1, end, i + 1, a);
+        if (ab)
+        {
+            possible = true;
+        }
     }
-    else if(s[i] == t[end])
+    if (!possible && (s[i] == t[end] || s[i] == '?'))
     {
-        return solve1(s,t,start,end-1,i+1);
+        ba = solve1(s, t, start, end - 1, i + 1, a);
     }
-    else 
+    if (ab | ba)
     {
+        a[i*(n+1)+start] = 1;
+        return true;
+    }
+    else
+    {
+        a[i*(n+1)+start] = 0;
         return false;
     }
 }
@@ -43,6 +61,7 @@ void solve()
     cin >> n;
     string s;
     cin >> s;
+    vector<int8_t> a((n + 1) * (n + 1), -1);
     string t = "";
     for (int i = 1; i <= n; i++)
     {
@@ -58,13 +77,13 @@ void solve()
     ll start = 0;
     ll end = n - 1;
     ll lifeline = 0;
-    if(solve1(s,t,start,end,0))
+    if (solve1(s, t, start, end, 0, a))
     {
-        cout<<"YES"<<endl;
-        return ;
+        cout << "YES" << endl;
+        return;
     }
-    cout<<"NO"<<endl;
-    return ;
+    cout << "NO" << endl;
+    return;
 }
 int main()
 {
