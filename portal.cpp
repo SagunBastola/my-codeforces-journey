@@ -15,7 +15,7 @@ ostream& operator<<(ostream& s,vector<T> &v)
 {
     for(auto &x : v)
     {   
-        s<<x;
+        s<<x<<" ";
     }
     return s;
 }
@@ -23,6 +23,22 @@ ostream& operator<<(ostream& s,vector<T> &v)
 #define pi pair<ll,ll>
 void solve()
 {
+       int n;
+       cin>>n;
+       int x,y;
+       cin>>x>>y;
+       vi a(n);
+       cin>>a;
+       if(is_sorted(a.begin(),a.end()))
+       {
+            cout<<a<<endl;
+            return;
+       }
+
+       while(true)
+       {
+         
+       }
 }
 int main()
 {
