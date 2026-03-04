@@ -1,4 +1,11 @@
-Alice
-Bob
-Alice
-Bob
+YES
+YES
+YES
+NO
+NO
+YES
+NO
+NO
+YES
+YES
+YES

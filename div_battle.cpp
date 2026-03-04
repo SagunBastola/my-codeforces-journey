@@ -24,16 +24,16 @@ ostream &operator<<(ostream &s, vector<T> &v)
 int count(ll n)
 {
     int cnt = 1;
-    for (int i = 2; i <= n; i++)
+    for (int i = 2; i < n; i++)
     {
         if (n % i == 0)
         {
             cnt++;
-            n=n/i;
-            while(n%i == 0)
+            n = n / i;
+            while (n % i == 0)
             {
                 cnt++;
-                n=n/i;
+                n = n / i;
             }
         }
     }
@@ -58,10 +58,13 @@ void solve()
     ll cnt = 0;
     for (int i = 0; i < n; i++)
     {
-        
-        cnt += (count(a[i]) - 1);
+        ll sum = count(a[i]);
+        ;
+        if (sum > 0)
+        {
+            cnt += (count(a[i]) - 1);
+        }
     }
-
     if (cnt % 2 == 0)
     {
         cout << "Bob" << endl;
