@@ -21,34 +21,23 @@ ostream &operator<<(ostream &s, vector<T> &v)
 }
 #define vi vector<ll>
 #define pi pair<ll, ll>
+long long lcm(long long a, long long b)
+{
+    return (a / gcd(a, b)) * b;
+}
 void solve()
 {
+    ll a, b, c, m;
+    cin >> a >> b >> c >> m;
+    ll abc = lcm(lcm(a, b), c);
 
-    string s;
-    cin >> s;
+    ll a_result = (m / a) * 6 + 2 * (m / abc) - 3 * (m / lcm(a, c)) - 3 * (m / lcm(a, b));
 
-    int n = s.size();
-    vector<int> vec(n, 0);
+    ll b_result = (m / b) * 6 + 2 * (m / abc) - 3 * (m / lcm(b, c)) - 3 * (m / lcm(a, b));
 
-    vec[0] = (s[0] == '2');
-    for (int i = 1; i < s.size(); i++)
-    {
-        vec[i] = vec[i - 1] + (s[i] == '2');
-    }
+    ll c_result = (m / c) * 6 + 2 * (m / abc) - 3 * (m / lcm(a, c)) - 3 * (m / lcm(b, c));
 
-    vector<int> suf(n, 0);
-    suf[n - 1] = (s[n - 1] == '1' || s[n - 1] == '3');
-
-    for (int i = n - 2; i >= 0; i--)
-    {
-        suf[i] = suf[i + 1] + (s[i] == '1' || s[i] == '3');
-    }
-    int maxcnt = 0;
-    for (int i = 0; i < n; i++)
-    {
-        maxcnt = max(maxcnt, suf[i] + vec[i]);
-    }
-    cout << n - maxcnt << endl;
+    cout<<a_result<<" "<<b_result<<" "<<c_result<<endl;
 }
 int main()
 {
