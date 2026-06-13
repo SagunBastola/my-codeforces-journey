@@ -15,7 +15,7 @@ ostream& operator<<(ostream& s,vector<T> &v)
 {
     for(auto &x : v)
     {   
-        s<<x;
+        s<<x<<" ";
     }
     return s;
 }
