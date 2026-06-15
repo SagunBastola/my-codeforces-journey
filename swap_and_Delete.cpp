@@ -23,22 +23,46 @@ ostream &operator<<(ostream &s, vector<T> &v)
 #define pi pair<ll, ll>
 void solve()
 {
-    ll s, k, m;
-    cin >> s >> k >> m;
-    if(s <= k)
-    {
-        cout<<max(0ll,s-m%k)<<endl;
-    }
-    else{
-        if((m/k)%2 == 0)
-        {
-            cout<<s-m%k<<endl;
-        }
-        else{
-            cout<<k-m%k<<endl;
-        }
-    }
+    string s;
+    cin >> s;
 
+    ll n = s.size();
+    ll one = 0;
+    ll zero = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (s[i] == '0')
+        {
+            zero++;
+        }
+        else
+        {
+            one++;
+        }
+    }
+    
+    for (int i = 0; i < n; i++)
+    {
+        if (s[i] == '0' && one > 0)
+        {
+            one--;
+        }
+        else if (s[i] == '0')
+        {
+            cout<<n-i<<endl;
+            return;
+        }
+        else if (s[i] == '1' && zero > 0)
+        {
+            zero--;
+        }
+        else if (s[i] == '1')
+        {
+            cout<<n-i<<endl;
+            return;
+        }
+    }
+    cout<<0<<endl;
 }
 int main()
 {
