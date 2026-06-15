@@ -23,27 +23,12 @@ ostream& operator<<(ostream& s,vector<T> &v)
 #define pi pair<ll,ll>
 void solve()
 {
-    ll n;
-    cin>>n;
-
-    ll sum_of_min2=0;
-    ll max_min1=INT_MAX;
-    ll min_min2=INT_MAX;
-    while(n--)
-    {
-        ll m;
-        cin>>m;
-        vi a(m);
-        cin>>a;
-        sort(a.begin(),a.end());
-        sum_of_min2+=a[1];
-        max_min1=min(max_min1,a[0]);
-        min_min2=min(min_min2,a[1]);
-    }
-    cout<<sum_of_min2-min_min2+max_min1<<endl;
+    
 }
 int main()
 {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
     int t;
     cin >> t;
     while (t--)
