@@ -24,36 +24,35 @@ ostream &operator<<(ostream &s, vector<T> &v)
 void solve()
 {
     ll n;
-    cin >> n;
-
-    vi a(n);
-    vi b(n);
-    cin >> a >> b;
-    vector<ll> d = a;
-    sort(d.begin(), d.end());
-    rep(i, 0, n)
+    cin>>n;
+    vi a(n),b(n);
+    cin>>a>>b;
+    vector<ll> d=a;
+    sort(d.begin(),d.end());
+    for(ll i=0;i<n;i++)
     {
-        if (d[i] > b[i])
+        if(d[i] > b[i])
         {
-            cout << -1 << endl;
+            cout<<-1<<endl;
             return;
         }
     }
-    vector<ll> rb = b;
-    ll total_swaps = 0;
-
-    for(int i = 0; i < n; i++) {
-        ll curr = a[i];
-        
-        for(int j = 0; j < rb.size(); j++) {
-            if(rb[j] >= curr) {
-                total_swaps += j;
-                rb.erase(rb.begin() + j);
+    vi rb=b;
+    ll total_swaps=0;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<rb.size();j++)
+        {
+            if(a[i] <= rb[j])
+            {
+                total_swaps+=j;
+                rb.erase(rb.begin()+j);
                 break;
             }
         }
     }
     cout<<total_swaps<<endl;
+     
 }
 int main()
 {
