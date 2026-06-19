@@ -23,16 +23,27 @@ ostream& operator<<(ostream& s,vector<T> &v)
 #define pi pair<ll,ll>
 void solve()
 {
-    ll n,q;
-    cin>>n>>q;
-
+    ll n;
+    cin>>n;
+    
     vi a(n);
     cin>>a;
 
-    vi x(q);
-    cin>>x;
+    ll sum=0;
+    rep(i,0,n)
+    {
+        sum+=a[i];
+    }
+    ll sum2=0;
+    ll max_gcd=INT_MIN;
+    rep(i,0,n-1)
+    {
+        sum-=a[i];
+        sum2+=a[i];
+        max_gcd=max(max_gcd,gcd(sum,sum2));
 
-        
+    }
+    cout<<max_gcd<<endl;
 }
 int main()
 {

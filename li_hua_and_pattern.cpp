@@ -23,16 +23,7 @@ ostream& operator<<(ostream& s,vector<T> &v)
 #define pi pair<ll,ll>
 void solve()
 {
-    ll n,q;
-    cin>>n>>q;
-
-    vi a(n);
-    cin>>a;
-
-    vi x(q);
-    cin>>x;
-
-        
+    
 }
 int main()
 {
