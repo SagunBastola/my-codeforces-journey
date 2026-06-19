@@ -23,21 +23,9 @@ ostream& operator<<(ostream& s,vector<T> &v)
 #define pi pair<ll,ll>
 void solve()
 {
-    ll n;
-    cin>>n;
-
-    vi a(n);
-    cin>>a;
-
-    ll ans = (1 << 30) - 1;
-    rep(i,0,n)
-    {
-        if(a[i] != i)
-        {
-            ans&=i;
-        }
-    }
-    cout<<ans<<endl;
+    ll n,k;
+    cin>>n>>k;
+    
 }
 int main()
 {
