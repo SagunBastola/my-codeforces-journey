@@ -25,7 +25,24 @@ void solve()
 {
     ll n,k;
     cin>>n>>k;
-    
+    vi a(n);
+    cin>>a;
+
+    unordered_set<ll> un_st;
+    rep(i,0,n)
+    {
+        un_st.insert(a[i]);
+        a[i]=a[i]-k;
+    }
+    rep(i,0,n)
+    {
+        if(un_st.find(a[i]) != un_st.end())
+        {
+            cout<<"YES"<<endl;
+            return;
+        }
+    }
+    cout<<"NO"<<endl;
 }
 int main()
 {
