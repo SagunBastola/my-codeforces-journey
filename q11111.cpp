@@ -23,7 +23,19 @@ ostream& operator<<(ostream& s,vector<T> &v)
 #define pi pair<ll,ll>
 void solve()
 {
-    
+    ll n,k;
+    cin>>n>>k;
+
+    ll ans=0;
+    ll i=1;
+    while(i<=n)
+    {
+        ll one= min(k,n/i);
+        ans+=one;
+        n-=one*i;
+        i=i<<1;
+    }
+    cout<<ans<<endl;
 }
 int main()
 {
