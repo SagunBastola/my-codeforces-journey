@@ -29,32 +29,45 @@ void solve()
     vi b(n);
     cin >> a >> b;
 
-    bool great = false;
-    bool is_there = false;
-    int count = 0;
+    vi diff(n);
     rep(i, 0, n)
     {
-        if (a[i] == b[i])
+
+        diff[i] = b[i] - a[i];
+        if(i % 2 !=0)
         {
-            if (count == 1 && a[i - 1] > b[i - 1])
+            diff[i]=-diff[i];
+        }
+    }
+    rep(i,0,n)
+    {
+        if(i==0)
+        {
+            if(diff[i] < 0)
             {
-                cout << "NO" << endl;
+                cout<<"NO"<<endl;
+                return;
             }
-            great = false;
-            is_there = false;
-            count = 0;
             continue;
         }
-        if(a[i] < b[i])
+        if(i%2 == 0)
         {
-            count++;
-            
+            if(diff[i] < diff[i-1])
+            {
+                cout<<"NO"<<endl;
+                return;
+            }
+        }
+        else
+        {
+            if(diff[i] > diff[i-1])
+            {
+                cout<<"NO"<<endl;
+                return;
+            }
         }
     }
-    if (count == 1 && a[n-1] > b[n - 1])
-    {
-        cout << "NO" << endl;
-    }
+    cout<<"YES"<<endl;
 }
 int main()
 {

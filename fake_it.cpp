@@ -25,33 +25,18 @@ void solve()
 {
     ll n;
     cin>>n;
-    string s;
-    cin>>s;
-
-    if(n==1)
+    ll c=0;
+    while(n)
     {
-        cout<<1<<endl;
-        return;
+        n/=10;
+        c++;
     }
-    int result=0;
-    rep(i,1,n)
+    ll ans=1;
+    rep(i,0,c)
     {
-        if( s[i] != s[i-1])
-        {
-            result++;
-        }
+        ans=ans*10;
     }
-    if(result==0)
-    {
-        cout<<1<<endl;
-    }
-    else if(result ==1)
-    {
-        cout<<2<<endl;
-    }
-    else{
-        cout<<1<<endl;
-    }
+    cout<<ans+1<<endl;
 }
 int main()
 {
