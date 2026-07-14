@@ -21,56 +21,49 @@ ostream& operator<<(ostream& s,vector<T> &v)
 }
 #define vi vector<ll>
 #define pi pair<ll,ll>
-const int MOD = 1e9 + 7;
 void solve()
 {
-    ll n;
+    int n;
     cin>>n;
     vi a(n);
     cin>>a;
-    bool neg=false;
-    if(a[0]!=-1)
+    ll rem=0;
+    rep(i,0,n-1)
     {
-        cout<<1<<endl;
-        return;
-    }
-    ll neg_count=0;
-    rep(i,0,n)
-    {
-        if(a[i] > 0)
+        if(i==0)
         {
-            break;
+            rem+=(a[i]-1);
+            a[i]=1;
         }
-        neg_count++;
-
-    }
-    if(neg_count== n)
-    {
-        cout<<pow(2,neg_count-1)<<endl;
-    }
-    int ans=0;
-    int aa=1;
-    int count=0;
-    rep(i,neg_count,n)
-    {
-        if(a[i] != a[i-1])
+        else if(i>0 && a[i] > a[i-1])
         {
-            if(aa> 1)
-            {
-                count+=aa;
-            }
-            aa=1;
-            if(a[i] == a[i-1]+1)
-            {
-                ans++;
-            }
+            rem+=(a[i]-a[i-1]-1);
+            a[i]=a[i-1]+1;
+            
         }
-        else{
-            aa++;
-
+        else if(a[i] <= a[i-1])
+        {
+            
+            rem-=(a[i-1]+1-a[i]);
+            if(rem < 0)
+            {
+                cout<<"NO"<<endl;
+                return;
+            }
+            a[i]=a[i-1]+1;
+        }
+        
+    }
+    a[n-1]=a[n-1]+rem;
+    rep(i,1,n)
+    {
+        if(a[i-1] >= a[i])
+        {
+            cout<<"NO"<<endl;
+            return;
         }
     }
-    cout<<ans<<" "<<pow(2,neg_count-1)<<count<<endl;
+    cout<<"YES"<<endl;
 }
 int main()
 {

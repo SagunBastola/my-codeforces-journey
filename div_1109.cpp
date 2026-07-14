@@ -21,56 +21,34 @@ ostream& operator<<(ostream& s,vector<T> &v)
 }
 #define vi vector<ll>
 #define pi pair<ll,ll>
-const int MOD = 1e9 + 7;
 void solve()
 {
-    ll n;
+    string s;
+    int n;
     cin>>n;
-    vi a(n);
-    cin>>a;
-    bool neg=false;
-    if(a[0]!=-1)
-    {
-        cout<<1<<endl;
-        return;
-    }
-    ll neg_count=0;
+    cin>>s;
+    
+    ll longhash=0;
+    ll max1=0;
     rep(i,0,n)
     {
-        if(a[i] > 0)
+        if(s[i] == '#')
         {
-            break;
-        }
-        neg_count++;
-
-    }
-    if(neg_count== n)
-    {
-        cout<<pow(2,neg_count-1)<<endl;
-    }
-    int ans=0;
-    int aa=1;
-    int count=0;
-    rep(i,neg_count,n)
-    {
-        if(a[i] != a[i-1])
-        {
-            if(aa> 1)
-            {
-                count+=aa;
-            }
-            aa=1;
-            if(a[i] == a[i-1]+1)
-            {
-                ans++;
-            }
+            longhash++;
+            max1=max(max1,longhash);
         }
         else{
-            aa++;
-
+            longhash=0;
         }
     }
-    cout<<ans<<" "<<pow(2,neg_count-1)<<count<<endl;
+
+    max1=max(max1,longhash);
+    if(max1 % 2 == 1)
+    {
+        cout<<max1/2 +1 <<endl;
+        return;
+    }
+    cout<<max1/2<<endl;
 }
 int main()
 {
