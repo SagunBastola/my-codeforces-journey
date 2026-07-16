@@ -34,66 +34,17 @@ void solve()
         cout << "YES" << endl;
         return;
     }
-    vi b(n);
-    rep(i, 0, n)
-    {
-        b[i] = abs(i + 1 - a[i]);
-    }
-    ll oddcnt = 0;
-    ll evencnt = 0;
-    rep(i, 0, n)
-    {
-        if (b[i] % 2 == 0)
-        {
-            evencnt++;
-        }
-        else
-        {
-            oddcnt++;
-        }
-    }
-    cout<<b<<endl;
-    // if (evencnt > 0 && oddcnt > 0)
-    // {
-    //     if ((x % 2 == 0 && y % 2 == 1) || (x % 2 == 1 && y % 2 == 0))
-    //     {
-    //         cout << "YES" << endl;
-    //         return;
-    //     }
-    //     else
-    //     {
-    //         cout << "NO" << endl;
-    //         return;
-    //     }
-    // }
-    // else if (oddcnt > 0)
-    // {
-    //     if (x % 2 == 1 || y % 2 == 1)
-    //     {
-    //         cout << "YES" << endl;
-    //         return;
-    //     }
-    //     else
-    //     {
-    //         cout << "NO" << endl;
-    //         return;
-    //     }
-    // }
-    // else if (evencnt > 0)
-    // {
-    //     if (x % 2 == 0 || y % 2 == 0)
-    //     {
-    //         cout << "YES" << endl;
-    //         return;
-    //     }
-    //     else
-    //     {
-    //         cout << "NO" << endl;
-    //         return;
-    //     }
-    // }
-    // cout<<"yes"<<endl;
+    ll g = gcd(x, y);
 
+    for (int i = 0; i < n; i++)
+    {
+        if (abs((i + 1) - a[i]) % g != 0)
+        {
+            cout << "NO" << endl;
+            return;
+        }
+    }
+    cout << "YES" << endl;
 }
 int main()
 {
