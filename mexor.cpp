@@ -57,16 +57,35 @@ void solve()
     int k1 = k;
     vi a;
     int c = 0;
+    unordered_set<ll> b;
     while (k1)
     {
         if (k1 & 1)
         {
             a.push_back((1 << c));
+            b.insert((1 << c));
             set++;
         }
         c++;
         k1 = k1 >> 1;
     }
+    c = 0;
+    k1 = n;
+    while (k1)
+    {
+        if ((k1 & 1))
+        {
+            if (b.find((1 << c)) == b.end())
+            {
+                a.push_back((1 << c));
+                b.insert((1 << c));
+                set++;
+            }
+        }
+        c++;
+        k1 = k1 >> 1;
+    }
+    set = a.size();
     // cout<<set<<endl;
     // cout<<a<<endl;
     sort(a.begin(), a.end());
@@ -98,16 +117,7 @@ void solve()
     }
 
     cout << "YES" << endl;
-    rep(i,0,n)
-    {
-        if(ans[i] == k)
-        {
-            continue;
-        }
-        cout<<ans[i]<<" ";
-    }
-    cout<<k<<endl;
-    
+    cout<<ans<<endl;
 }
 int main()
 {
