@@ -23,33 +23,7 @@ ostream& operator<<(ostream& s,vector<T> &v)
 #define pi pair<ll,ll>
 void solve()
 {
-    ll xa,ya,xb,yb,xc,yc;
-    cin>>xa>>ya>>xb>>yb>>xc>>yc;
-    ll ans=0;
-    if(xa==xb && xa == xc)
-    {
-        if(yc<=max(yb,ya) && yc >= min(yb,ya))
-        {
-            ans=2+abs(yb-ya);
-        }
-        else{
-            ans=abs(yb-ya);
-        }
-    }
-    else if(ya==yb && ya == yc)
-    {
-        if(xc<=max(xb,xa) && xc >= min(xb,xa))
-        {
-            ans=2+abs(xb-xa);
-        }
-        else{
-            ans=abs(xb-xa);
-        }
-    }
-    else{
-        ans=abs(xa-xb)+abs(ya-yb);
-    }
-    cout<<ans<<endl;
+    
 }
 int main()
 {
