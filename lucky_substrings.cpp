@@ -23,7 +23,33 @@ ostream& operator<<(ostream& s,vector<T> &v)
 #define pi pair<ll,ll>
 void solve()
 {
-    
+
+    string s;
+    cin>>s;
+
+    ll f=0,sev=0;
+    rep(i,0,s.size())
+    {
+        if(s[i] == '4')
+        {
+            f++;
+        }
+        else if(s[i] == '7')
+        {
+            sev++;
+        }
+    }
+    if(f == 0 && sev == 0)
+    {
+        cout<<-1<<endl;
+    }
+    else if(f >= sev)
+    {
+        cout<<4<<endl;
+    }
+    else{
+        cout<<7<<endl;
+    }
 }
 int main()
 {

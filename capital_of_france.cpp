@@ -1,0 +1,63 @@
+#include <bits/stdc++.h>
+using ll = long long;
+using namespace std;
+#define rep(i, m, n) for (ll i = m; i < n; i++)
+#define repr(i, m, n) for (ll i = m; i >= n; i--)
+template <typename T>
+istream &operator>>(istream &s, vector<T> &v)
+{
+    for (auto &x : v)
+        s >> x;
+    return s;
+}
+template <typename T>
+ostream &operator<<(ostream &s, vector<T> &v)
+{
+    for (auto &x : v)
+    {
+        s << x << " ";
+    }
+    return s;
+}
+#define vi vector<ll>
+#define pi pair<ll, ll>
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    vi a(n);
+    cin >> a;
+
+    ll mi = INT_MAX;
+    ll ma = INT_MIN;
+    rep(i, 0, n)
+    {
+        mi = min(mi, a[i]);
+        ma = max(ma, a[i]);
+    }
+    if (mi == ma)
+    {
+        cout << mi << endl;
+        return;
+    }
+    ll ans = mi | ma;
+    ll d = mi ^ ma;
+
+    while (mi < ma)
+    {
+        mi |= (mi + 1);
+    }
+    cout << mi << endl;
+}
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
+}
